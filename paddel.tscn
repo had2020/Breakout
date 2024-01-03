@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://2lk0yfkhpyma"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_m12oq"]
+[ext_resource type="Texture2D" uid="uid://ufpqydvpwkqr" path="res://assets/kenney_shape-characters/PNG/Double/blue_body_square.png" id="2_he780"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi52w"]
+size = Vector2(442, 107.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2bi6"]
+size = Vector2(217, 56)
+
+[node name="Paddel" type="StaticBody2D"]
+script = ExtResource("1_m12oq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(0.467253, 0.399999)
+shape = SubResource("RectangleShape2D_yi52w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(1.28308, 0.289782)
+texture = ExtResource("2_he780")
+
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -4)
+shape = SubResource("RectangleShape2D_y2bi6")
